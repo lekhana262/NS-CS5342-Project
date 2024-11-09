@@ -1,0 +1,27 @@
+1. Embedding Model
+Process: At the start of a project, course documents are ingested and chunked-lecture slides, textbooks, quizzes, for instance-into smaller, manageable pieces. This would be 500-word chunks.
+Embedding Generation: Each chunk is fed into an embedding model. This transforms the text into vector embeddings, or dense numerical representations that carry semantic meaning across every single piece of content.
+Tool Applied: Open-source embedding libraries, such as Sentence Transformers, are applied to generate embeddings.
+The embeddings are stored along with the document chunks, creating a structured, searchable knowledge base.
+2. Vector Database (Vector DB)
+Process: The vector database will store all document embeddings. When the user submits a query, this database will be queried to retrieve the most relevant document chunks by calculating the similarity of different document chunks to the query embedding.
+Similarity Search: For any given prompt, the embedding model produces an embedding the instant a user provides it. The vector database then takes this embedding of the prompt and compares it with the stored embeddings to fetch the most relevant document chunks.
+
+Tools: Vector databases like Faiss, Weaviate, or Qdrant are employed to allow for rapid similarity searching and retrieval.
+
+Output: The database returns those document chunks which best fit what the user typed in, providing the initial context for the response.
+3. Prompt Execution with Context
+Process: The document chunks retrieved from the vector database are used to construct a contextual prompt for building the LLM.
+Prompt Assembly: In fact, this contextual prompt is the user's question, appended with the document content retrieved, and helps the LLM give very specific, accurate, and relevant answers with regard to course material.
+This allows for the responses to be bound by the document chunks and the portion of the course content that is being attended to, making them more relevant and accurate.
+4. LLM Processing
+Process: The user's question combined with the context is then fed into the local LLM-say Dolly, Vicuna, GPT4All-processing it towards the generation of a coherent, course-specific answer.
+Response Generation: The LLM interprets the prompt, referring to the document chunks and generating a response that answers the user's question as accurately as possible.
+Local Execution: Because the LLM executes locally, processing remains private and secure and does not leave the machine.
+Output: The LLM provides an answer to the user's question, referring to the retrieved course material for an accurate contextually grounded response.
+5. User Interface (JS Execution)
+Process: The user interface is made with the use of JavaScript, or something similar that could communicate with the bot to take input questions from the user and to display the responses.
+Outcome: If LLM decides to give an answer, it would display via the UI the answer itself, and if it uses document chunks show citations of those used.
+Interaction: Users can ask follow-up questions or submit new queries. For each of these prompts, the UI sends the prompt to the system and, thus, initiates the whole flow again.
+Tools: A frontend framework, such as React or vanilla JavaScript, will make the interactions with the user smooth.
+Output: Easy-to-use interaction by students in which they are able to easily query the Q&A bot and will get responses exact and related to their course.

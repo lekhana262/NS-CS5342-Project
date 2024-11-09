@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "c07bde7c-ea2e-424d-a25f-a1eb0a420ead",
+		"name": "Chatbot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28592745"
+	},
+	"item": [
+		{
+			"name": "load_conversation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6MTEsIlVzZXJuYW1lIjoic3VwZXJfdXNlckBldW5pbWFydC5jb20iLCJhY2Nlc3NfdGVtcGxhdGVfaWQiOjEsImNvbXBhbnlfaWQiOjEsImVtYWlsIjoiIiwiZmlyc3RfbmFtZSI6IlN1cGVyIiwibGFzdF9uYW1lIjoiVXNlciIsIm1vYmlsZV9udW1iZXIiOiIiLCJwcmVmZXJlbmNlcyI6eyJkYXRlX2Zvcm1hdCI6eyJkaXNwbGF5X25hbWUiOiJ5eXl5L21tL2RkIiwiaWQiOjU1NywibG9va3VwX2NvZGUiOiJ5eXl5L21tL2RkIn0sIm5vdGlmaWNhdGlvbl9zZXR0aW5ncyI6eyJlbWFpbCI6ZmFsc2UsInJlbWluZGVyIjp0cnVlLCJzbXMiOnRydWV9LCJzZXRfdGltZV9hdXRvbWF0aWNhbGx5Ijp0cnVlLCJzZXRfdGltZV96b25lX2F1dG9tYXRpY2FsbHkiOnRydWUsInRpbWVfZm9ybWF0Ijp7ImRpc3BsYXlfbmFtZSI6IjEyIGhvdXJzIiwiaWQiOjU1NCwibG9va3VwX2NvZGUiOnsiZGlzcGxheV9uYW1lIjoiMTIgaG91cnMiLCJpZCI6NTU0LCJsb29rdXBfY29kZSI6eyJkaXNwbGF5X25hbWUiOiIxMiBob3VycyIsImlkIjo1NTQsImxvb2t1cF9jb2RlIjp7ImRpc3BsYXlfbmFtZSI6IjEyIGhvdXJzIiwiaWQiOjU1NCwibG9va3VwX2NvZGUiOiIxMl9IT1VSUyJ9fX19LCJ0aW1lX3pvbmUiOnsiZGlzcGxheV9uYW1lIjoiSW5kaWFuIFN0YW5kYXJkIFRpbWUiLCJpZCI6NTc0fX0sInJvbGVfaWQiOjEsInVzZXJfdHlwZXMiOlt7ImlkIjo2MywibmFtZSI6IlNlbGxlciJ9XX0.wd1vsLKMbOwmaTgVAL4mDWVAWfcFWpHwOLUZ8qdJV0Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/bot/load_conversation?start_index=0&stop_index=100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"bot",
+						"load_conversation"
+					],
+					"query": [
+						{
+							"key": "start_index",
+							"value": "0"
+						},
+						{
+							"key": "stop_index",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "answer_question",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6MTEsIlVzZXJuYW1lIjoic3VwZXJfdXNlckBldW5pbWFydC5jb20iLCJhY2Nlc3NfdGVtcGxhdGVfaWQiOjEsImNvbXBhbnlfaWQiOjEsImVtYWlsIjoiIiwiZmlyc3RfbmFtZSI6IlN1cGVyIiwibGFzdF9uYW1lIjoiVXNlciIsIm1vYmlsZV9udW1iZXIiOiIiLCJwcmVmZXJlbmNlcyI6eyJkYXRlX2Zvcm1hdCI6eyJkaXNwbGF5X25hbWUiOiJ5eXl5L21tL2RkIiwiaWQiOjU1NywibG9va3VwX2NvZGUiOiJ5eXl5L21tL2RkIn0sIm5vdGlmaWNhdGlvbl9zZXR0aW5ncyI6eyJlbWFpbCI6ZmFsc2UsInJlbWluZGVyIjp0cnVlLCJzbXMiOnRydWV9LCJzZXRfdGltZV9hdXRvbWF0aWNhbGx5Ijp0cnVlLCJzZXRfdGltZV96b25lX2F1dG9tYXRpY2FsbHkiOnRydWUsInRpbWVfZm9ybWF0Ijp7ImRpc3BsYXlfbmFtZSI6IjEyIGhvdXJzIiwiaWQiOjU1NCwibG9va3VwX2NvZGUiOnsiZGlzcGxheV9uYW1lIjoiMTIgaG91cnMiLCJpZCI6NTU0LCJsb29rdXBfY29kZSI6eyJkaXNwbGF5X25hbWUiOiIxMiBob3VycyIsImlkIjo1NTQsImxvb2t1cF9jb2RlIjp7ImRpc3BsYXlfbmFtZSI6IjEyIGhvdXJzIiwiaWQiOjU1NCwibG9va3VwX2NvZGUiOiIxMl9IT1VSUyJ9fX19LCJ0aW1lX3pvbmUiOnsiZGlzcGxheV9uYW1lIjoiSW5kaWFuIFN0YW5kYXJkIFRpbWUiLCJpZCI6NTc0fX0sInJvbGVfaWQiOjEsInVzZXJfdHlwZXMiOlt7ImlkIjo2MywibmFtZSI6IlNlbGxlciJ9XX0.wd1vsLKMbOwmaTgVAL4mDWVAWfcFWpHwOLUZ8qdJV0Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"question\": \"what is Passive attack?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/bot/answer_question",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"bot",
+						"answer_question"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
