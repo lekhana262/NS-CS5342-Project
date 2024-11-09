@@ -11,8 +11,8 @@ from langchain.document_loaders import PyPDFDirectoryLoader
 
 import os
 
-os.environ["OPENAI_API_KEY"] = "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"
-
+os.environ["OPENAI_API_KEY"] = ""
+#key removed due to security reason
 loader = PyPDFDirectoryLoader("./data/")
 documents = loader.load()
 print(len(documents))
