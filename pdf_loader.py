@@ -11,21 +11,21 @@ from langchain.document_loaders import PyPDFDirectoryLoader
 
 import os
 
-os.environ["OPENAI_API_KEY"] = ""
-#key removed due to security reason
+os.environ["OPENAI_API_KEY"] = "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"
+
 loader = PyPDFDirectoryLoader("./data/")
 documents = loader.load()
 print(len(documents))
 
 
-#splitting the text into
+#The text is split into manageable chunks for embedding.
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 texts = text_splitter.split_documents(documents)
 
 print(len(texts))
 
 
-# Embed and store the texts
+# Embeddings for the text chunks are generated and stored in the Chroma database.
 # Supplying a persist_directory will store the embeddings on disk
 persist_directory =  './chroma_db/'
 

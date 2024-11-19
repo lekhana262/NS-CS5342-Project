@@ -9,7 +9,7 @@ function Url_Routes() {
     <BrowserRouter>
       <Routes>
 
-          <Route excat path="/" element={<Chatbot />} />
+          <Route excat path="/" element={<Chatbot />} /> 
 
       </Routes>
     </BrowserRouter>

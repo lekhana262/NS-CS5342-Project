@@ -6,7 +6,7 @@ from flask_cors import CORS
 from datetime import timedelta
 
 # Importing blueprints for different routes
-from routes.bot import bot as bot_router
+from routes.all_routes import bot as bot_router
 
 from flask_jwt_extended import JWTManager
 

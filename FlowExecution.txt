@@ -25,3 +25,96 @@ Outcome: If LLM decides to give an answer, it would display via the UI the answe
 Interaction: Users can ask follow-up questions or submit new queries. For each of these prompts, the UI sends the prompt to the system and, thus, initiates the whole flow again.
 Tools: A frontend framework, such as React or vanilla JavaScript, will make the interactions with the user smooth.
 Output: Easy-to-use interaction by students in which they are able to easily query the Q&A bot and will get responses exact and related to their course.
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------
+
+
+
+
+PDF Data Extraction: Extracts text data from the PDFs.
+Data Embedding: Converts the extracted text into embeddings using a language model (OpenAI GPT, for example).
+Query Processing: Handles user queries, processes them, and generates a response based on the embeddings.
+Response Generation: Generates and returns responses based on the most relevant data, along with citations from the PDFs.
+
+
+Here’s the step-by-step execution flow:
+
+Application Start:
+
+Run app.py.
+Flask app starts, database schema is created, and the server listens for requests.
+PDF Preprocessing:
+
+pdf_loader.py is executed (only once) to prepare the Chroma database.
+User Query:
+
+User sends a question to /answer_question.
+Request is routed to ask_question in routes/bot.py.
+Question Handling:
+
+bot_services.py processes the question:
+Calls llm_service.py to generate an answer.
+Stores the question, answer, and citations in the database.
+LLM Query:
+
+llm_service.py retrieves relevant chunks from the Chroma database.
+GPT model generates an answer and formats citations.
+Response to User:
+
+The answer and citations are sent back to the user as a JSON response.
+Key Files in Execution Order
+app.py: Entry point; starts the server.
+database.py: Sets up the database infrastructure.
+pdf_loader.py: Prepares document embeddings (runs once).
+routes/bot.py: Handles API routes for user queries.
+bot_services.py: Core chatbot logic.
+llm_service.py: Connects to LangChain and GPT for answering queries.
+
+
+
+
+
+
+
+
+Details of the Database
+1. Database Configuration
+The database is configured in the database.py file:
+2. Table for Storing Queries
+The Chat table is used to store user-asked queries. This table is defined in models/chat.py:
+3. Data Saved in the Chat Table
+Whenever a user asks a question, the query, response, and related metadata are saved into the Chat table in the SQLite database.
+This is handled in the answer_question method in bot_services.py:
+
+
+
+
+
+
+Tech stack
+
+UI
+
+react JS
+vite JS
+
+styling -  tailwind css
+
+Backend
+
+Flask
+Sqllite query purpose
+chroma_db pdf data store
+
