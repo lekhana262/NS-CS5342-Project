@@ -5,7 +5,7 @@ from langchain.chains import RetrievalQA
 
 import os
 
-os.environ["OPENAI_API_KEY"] = "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"
+#key line
 
 # Embed and store the texts
 persist_directory = './chroma_db/'
